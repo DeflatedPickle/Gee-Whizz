@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="Scene" type="Node" index="0"]
+[node name="Root" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -36,8 +36,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 63.0
-margin_bottom = 20.0
+margin_right = 109.0
+margin_bottom = 37.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -59,9 +59,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 30.0
-margin_right = 63.0
-margin_bottom = 50.0
+margin_top = 47.0
+margin_right = 109.0
+margin_bottom = 84.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -83,9 +83,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 60.0
-margin_right = 63.0
-margin_bottom = 80.0
+margin_top = 94.0
+margin_right = 109.0
+margin_bottom = 131.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

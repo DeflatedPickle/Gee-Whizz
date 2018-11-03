@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/player/player_body.png" type="Texture" id=1]
+[ext_resource path="res://sprites/player/player_head.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player/space_pack.png" type="Texture" id=3]
+[ext_resource path="res://sprites/player/right_arm.png" type="Texture" id=4]
+[ext_resource path="res://scripts/look_at_mouse.gd" type="Script" id=5]
+[ext_resource path="res://sprites/player/left_arm.png" type="Texture" id=6]
+
+[node name="Root" type="Node" index="0"]
+
+[node name="Player" type="Sprite" parent="." index="0"]
+
+position = Vector2( 460, 250 )
+scale = Vector2( 6, 6 )
+z_index = 1
+texture = ExtResource( 1 )
+offset = Vector2( -3, 4 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Head" type="Sprite" parent="Player" index="0"]
+
+position = Vector2( 3, -3 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 0, -4 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Space Pack" type="Sprite" parent="Player" index="1"]
+
+position = Vector2( 4, 1 )
+z_index = 1
+texture = ExtResource( 3 )
+offset = Vector2( 3, -1 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Right Arm" type="Sprite" parent="Player" index="2"]
+
+position = Vector2( 0, -3 )
+texture = ExtResource( 4 )
+offset = Vector2( -4, -1 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Left Arm" type="Sprite" parent="Player" index="3"]
+
+position = Vector2( 2, 0 )
+z_index = 2
+texture = ExtResource( 6 )
+offset = Vector2( -5, 1 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Offset" ]
+
+
