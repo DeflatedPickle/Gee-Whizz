@@ -14,11 +14,8 @@
 custom_solver_bias = 0.0
 extents = Vector2( 50, 70 )
 
-[node name="Root" type="Node" index="0"]
+[node name="Player" type="RigidBody2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="0"]
-
-position = Vector2( 400, 300 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -37,22 +34,25 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -10 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Player" type="Sprite" parent="RigidBody2D" index="1"]
+[node name="Body" type="Sprite" parent="." index="1"]
 
 scale = Vector2( 6, 6 )
 z_index = 1
 texture = ExtResource( 1 )
 offset = Vector2( -3, 4 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_bone_": true,
+"_edit_ik_": true
+}
 
-[node name="Head" type="Sprite" parent="RigidBody2D/Player" index="0"]
+[node name="Head" type="Sprite" parent="Body" index="0"]
 
 position = Vector2( 3, -3 )
 z_index = 1
@@ -60,7 +60,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, -4 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Space Pack" type="Sprite" parent="RigidBody2D/Player" index="1"]
+[node name="Space Pack" type="Sprite" parent="Body" index="1"]
 
 position = Vector2( 4, 1 )
 z_index = 1
@@ -68,7 +68,7 @@ texture = ExtResource( 3 )
 offset = Vector2( 3, -1 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Right Arm" type="Sprite" parent="RigidBody2D/Player" index="2"]
+[node name="Right Arm" type="Sprite" parent="Body" index="2"]
 
 position = Vector2( 0, -3 )
 texture = ExtResource( 4 )
@@ -76,7 +76,7 @@ offset = Vector2( -4, -1 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Tool" type="Sprite" parent="RigidBody2D/Player/Right Arm" index="0"]
+[node name="Tool" type="Sprite" parent="Body/Right Arm" index="0"]
 
 position = Vector2( -8.33334, -0.333332 )
 scale = Vector2( 0.4, 0.4 )
@@ -85,12 +85,12 @@ offset = Vector2( -4, -1 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Position2D" type="Position2D" parent="RigidBody2D/Player/Right Arm/Tool" index="0"]
+[node name="Position2D" type="Position2D" parent="Body/Right Arm/Tool" index="0"]
 
 position = Vector2( -9.90144, -1.17822 )
 rotation = -0.497956
 
-[node name="Left Arm" type="Sprite" parent="RigidBody2D/Player" index="3"]
+[node name="Left Arm" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( 2, 0 )
 z_index = 2
@@ -99,12 +99,13 @@ offset = Vector2( -5, 1 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Z Index" ]
 
-[node name="Head Position" type="Position2D" parent="RigidBody2D" index="2"]
+[node name="Head Position" type="Position2D" parent="." index="2"]
 
 position = Vector2( 20, -40 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Feet Position" type="Position2D" parent="RigidBody2D" index="3"]
+[node name="Feet Position" type="Position2D" parent="." index="3"]
 
-position = Vector2( -20, 50 )
+position = Vector2( -10, 60 )
 
 
