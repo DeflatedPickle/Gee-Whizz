@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/player/player_body.png" type="Texture" id=1]
 [ext_resource path="res://sprites/player/player_head.png" type="Texture" id=2]
 [ext_resource path="res://sprites/player/space_pack.png" type="Texture" id=3]
 [ext_resource path="res://sprites/player/right_arm.png" type="Texture" id=4]
 [ext_resource path="res://scripts/look_at_mouse.gd" type="Script" id=5]
-[ext_resource path="res://sprites/tools/glock.png" type="Texture" id=6]
-[ext_resource path="res://scripts/gun_shoot.gd" type="Script" id=7]
-[ext_resource path="res://sprites/player/left_arm.png" type="Texture" id=8]
+[ext_resource path="res://scenes/tools/Glock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/player/left_arm.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -76,25 +75,18 @@ offset = Vector2( -4, -1 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Tool" type="Sprite" parent="Body/Right Arm" index="0"]
+[node name="Tool" parent="Body/Right Arm" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -8.33334, -0.333332 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
-offset = Vector2( -4, -1 )
-script = ExtResource( 7 )
-_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
-
-[node name="Position2D" type="Position2D" parent="Body/Right Arm/Tool" index="0"]
-
-position = Vector2( -9.90144, -1.17822 )
-rotation = -0.497956
+position = Vector2( -9.21358, -0.745937 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 1
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
 [node name="Left Arm" type="Sprite" parent="Body" index="3"]
 
 position = Vector2( 2, 0 )
 z_index = 2
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 offset = Vector2( -5, 1 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Z Index" ]

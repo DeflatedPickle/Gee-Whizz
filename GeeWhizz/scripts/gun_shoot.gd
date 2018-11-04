@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta):
 	if bullet_cooldown == 0:
-		if self.get_node("../").name == "Right Arm":
+		if self.get_node("../../").name == "Right Arm":
 			if Input.is_mouse_button_pressed(BUTTON_LEFT):
 				create_bullet()
 
@@ -44,16 +44,6 @@ func _process(delta):
 
 		else:
 			rotate_back.remove(rotate_back.find(i))
-
-	if Input.is_key_pressed(KEY_D):
-		var world = self.get_node("/root/World")
-		var arm = self.get_node("/root/World/Player/Body/Right Arm")
-		var tool = self.get_node("/root/World/Player/Body/Right Arm/Tool")
-
-		arm.remove_child(tool)
-		world.add_child(tool)
-
-		print(tool)
 
 func rotation_impulse(rigid, head, tail, force):
 	player.apply_impulse(head.get_position(), Vector2(-force, -force))
