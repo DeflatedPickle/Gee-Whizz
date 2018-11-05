@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta):
 	if bullet_cooldown == 0:
-		if self.get_node("../../").name == "Right Arm":
+		if self.get_node("../../../").name == "Right Arm":
 			if Input.is_mouse_button_pressed(BUTTON_LEFT):
 				create_bullet()
 
@@ -58,7 +58,7 @@ func create_bullet():
 	bullet_instance.set_name("Bullet{count}".format({"count": bullet_count}))
 
 	var right_arm = self.get_node("/root/World/Player/Body/Right Arm")
-	var gun_point = self.get_node("/root/World/Player/Body/Right Arm/Tool/Position2D")
+	var gun_point = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool/Position2D")
 	var gun_point_position = gun_point.get_global_position()
 	var gun_position_rotated = gun_point_position.rotated(gun_point.get_rotation())
 	bullet_instance.set_position(gun_point_position)

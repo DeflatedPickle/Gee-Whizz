@@ -75,12 +75,13 @@ offset = Vector2( -4, -1 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Tool" parent="Body/Right Arm" index="0" instance=ExtResource( 6 )]
+[node name="Position2D" type="Position2D" parent="Body/Right Arm" index="0"]
 
-position = Vector2( -9.21358, -0.745937 )
-scale = Vector2( 0.1, 0.1 )
-z_index = 1
-_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+position = Vector2( -8.3647, -0.955966 )
+
+[node name="Tool" parent="Body/Right Arm/Position2D" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( -2.09118, 0.418235 )
 
 [node name="Left Arm" type="Sprite" parent="Body" index="3"]
 
@@ -90,6 +91,10 @@ texture = ExtResource( 7 )
 offset = Vector2( -5, 1 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="Position2D" type="Position2D" parent="Body/Left Arm" index="0"]
+
+position = Vector2( -11.3521, -0.955966 )
 
 [node name="Head Position" type="Position2D" parent="." index="2"]
 
