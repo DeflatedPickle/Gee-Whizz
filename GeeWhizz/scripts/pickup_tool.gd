@@ -17,9 +17,6 @@ func _process(delta):
 
 	var points = [Vector2(pos.x + extents.x, pos.y + extents.y), Vector2(pos.x - extents.x, pos.y - extents.y)]
 
-	# print(points)
-	# print(hand_pos)
-
 	if hand_pos.x < points[0].x and hand_pos.x > points[1].x and hand_pos.y < points[0].y and hand_pos.y > points[1].y:
 		if Input.is_mouse_button_pressed(BUTTON_RIGHT):
 			util.reparent_node(the_tool, player_hand)
@@ -30,9 +27,9 @@ func _process(delta):
 
 			util.get_child_of_class(the_tool, "Sprite").set_scale(Vector2(0.6, 0.6))
 
-func _draw():
-	var pos = self.get_position()
-	var hand_pos = player_hand.get_position()
+# func _draw():
+# 	var pos = self.get_position()
+# 	var hand_pos = player_hand.get_position()
 
-	var extents = self.shape.extents * 3
-	draw_rect(Rect2(Vector2(pos.x + extents.x, pos.y + extents.y), Vector2(pos.x - extents.x, pos.y - extents.y)), Color(1.0,0.0,0.0))
+# 	var extents = self.shape.extents * 3
+# 	draw_rect(Rect2(Vector2(pos.x + extents.x, pos.y + extents.y), Vector2(pos.x - extents.x, pos.y - extents.y)), Color(1.0,0.0,0.0))
