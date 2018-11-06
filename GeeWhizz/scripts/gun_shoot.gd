@@ -3,7 +3,7 @@ extends Node
 var bullet_scene = load("res://scenes/Bullet.tscn")
 
 var bullet_cooldown = 0
-var bullet_cooldown_max = 30
+# var bullet_cooldown_max = 30
 
 var bullet_count = 0
 
@@ -26,13 +26,15 @@ func _process(delta):
 			if Input.is_mouse_button_pressed(BUTTON_LEFT):
 				create_bullet()
 
-				player.apply_impulse(Vector2(0, 0), Vector2(-movement_position.x * 0.8, -movement_position.y * 0.8))
-				rotation_impulse(player, self.get_node("/root/World/Player/Head Position"), self.get_node("/root/World/Player/Feet Position"), movement_position.x * 0.6)
+				var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+
+				player.apply_impulse(Vector2(0, 0), Vector2(-movement_position.x * tool_.push_force, -movement_position.y * tool_.push_force))
+				rotation_impulse(player, self.get_node("/root/World/Player/Head Position"), self.get_node("/root/World/Player/Feet Position"), movement_position.x * tool_.push_force)
 
 				rotation_spring(player_head, movement_position.x * 0.005)
 				rotation_spring(player_pack, movement_position.x * 0.002)
 
-				bullet_cooldown = bullet_cooldown_max
+				bullet_cooldown = tool_.shoot_cooldown
 				bullet_count += 1
 
 	else:
@@ -57,8 +59,10 @@ func create_bullet():
 	var bullet_instance = bullet_scene.instance()
 	bullet_instance.set_name("Bullet{count}".format({"count": bullet_count}))
 
+	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+
 	var right_arm = self.get_node("/root/World/Player/Body/Right Arm")
-	var gun_point = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool/Position2D")
+	var gun_point = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool/Sprite/Position2D")
 	var gun_point_position = gun_point.get_global_position()
 	var gun_position_rotated = gun_point_position.rotated(gun_point.get_rotation())
 	bullet_instance.set_position(gun_point_position)
@@ -66,6 +70,6 @@ func create_bullet():
 	bullet_instance.set_rotation(right_arm.get_global_rotation())
 
 	movement_position = gun_point_position - right_arm.get_global_position()
-	bullet_instance.apply_impulse(Vector2(0, 0), Vector2(6 * movement_position.x, 6 * movement_position.y))
+	bullet_instance.apply_impulse(Vector2(0, 0), Vector2(tool_.bullet_speed * sign(movement_position.x), tool_.bullet_speed * sign(movement_position.y)))
 
 	self.get_node("/root/World").add_child(bullet_instance)

@@ -2,15 +2,15 @@
 
 [ext_resource path="res://scripts/tool.gd" type="Script" id=1]
 [ext_resource path="res://scripts/pickup_tool.gd" type="Script" id=2]
-[ext_resource path="res://sprites/tools/glock.png" type="Texture" id=3]
+[ext_resource path="res://sprites/tools/fire_extinguisher.png" type="Texture" id=3]
 [ext_resource path="res://scripts/gun_shoot.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 35.9473, 23.5729 )
+extents = Vector2( 28.9878, 32.2094 )
 
-[node name="Glock" type="RigidBody2D" index="0"]
+[node name="Glock" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 2
@@ -32,18 +32,17 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-shoot_cooldown = 30
+shoot_cooldown = 0
 push_force = 0.8
 rotation_force = 0.6
 drop_force = 0.4
 tool_current_ammo = 10
 tool_max_ammo = 10
-bullet_speed = 480
-bullet_damage = 3
+bullet_speed = 120
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -12.1102, -11.1912 )
+position = Vector2( 0.29789, -1.33265 )
 shape = SubResource( 1 )
 script = ExtResource( 2 )
 
@@ -51,13 +50,12 @@ script = ExtResource( 2 )
 
 scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 3 )
-offset = Vector2( -4, 0 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="Position2D" type="Position2D" parent="Sprite" index="0"]
 
-position = Vector2( -10.9376, 0.273041 )
+position = Vector2( -3.59627, 3.51882 )
 rotation = -0.497956
 scale = Vector2( 0.285714, 0.285714 )
 _sections_unfolded = [ "Transform" ]
