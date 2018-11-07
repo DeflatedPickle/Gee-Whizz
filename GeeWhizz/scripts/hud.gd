@@ -15,3 +15,6 @@ func _process(delta):
 
 		else:
 			ammo.text = "Infinite"
+
+	else:
+		ammo.text = ""
