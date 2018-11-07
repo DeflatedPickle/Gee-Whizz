@@ -24,7 +24,6 @@ func _process(delta):
 	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
 
 	if tool_:
-		print(bullet_cooldown)
 		if tool_.tool_current_ammo > 0 or tool_.tool_max_ammo == -1:
 			if bullet_cooldown <= 0:
 				if self.get_node("../../../").name == "Right Arm":
@@ -39,7 +38,9 @@ func _process(delta):
 
 						bullet_cooldown = tool_.shoot_cooldown
 						bullet_count += 1
-						tool_.tool_current_ammo -= 1
+
+						if tool_.tool_max_ammo != -1:
+							tool_.tool_current_ammo -= 1
 
 			else:
 				bullet_cooldown -= 0.1

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/drop_tool.gd" type="Script" id=2]
 [ext_resource path="res://scenes/tools/Glock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/tools/FireExtinguishers.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/hud.gd" type="Script" id=5]
 
 [node name="World" type="Node" index="0"]
 
@@ -20,5 +21,37 @@ bullet_damage = 0
 [node name="FireExtinguishers" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 880, 320 )
+
+[node name="HUD" type="CanvasLayer" parent="." index="3"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 5 )
+
+[node name="LabelAmmo" type="Label" parent="HUD" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 990.0
+margin_top = 570.0
+margin_right = 1016.0
+margin_bottom = 595.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "xd"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction" ]
 
 
