@@ -32,13 +32,16 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-shoot_cooldown = 0
-push_force = 0.8
+shoot_cooldown = 0.1
+push_force = 0.1
 rotation_force = 0.6
 drop_force = 0.4
-tool_current_ammo = 10
-tool_max_ammo = 10
+head_kickback_force = 0.0
+pack_kickback_force = 0.0
+tool_current_ammo = -1
+tool_max_ammo = -1
 bullet_speed = 120
+bullet_damage = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 

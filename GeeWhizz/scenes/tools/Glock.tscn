@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.9473, 23.5729 )
 
-[node name="Glock" type="RigidBody2D" index="0"]
+[node name="Glock" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 2
@@ -32,10 +32,12 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-shoot_cooldown = 30
+shoot_cooldown = 3
 push_force = 0.8
 rotation_force = 0.6
 drop_force = 0.4
+head_kickback_force = 0.005
+pack_kickback_force = 0.002
 tool_current_ammo = 10
 tool_max_ammo = 10
 bullet_speed = 480

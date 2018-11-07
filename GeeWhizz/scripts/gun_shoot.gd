@@ -21,24 +21,28 @@ func _ready():
 	set_process_input(true)
 
 func _process(delta):
-	if bullet_cooldown == 0:
-		if self.get_node("../../../").name == "Right Arm":
-			if Input.is_mouse_button_pressed(BUTTON_LEFT):
-				create_bullet()
+	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
 
-				var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+	if tool_:
+		print(bullet_cooldown)
+		if tool_.tool_current_ammo > 0 or tool_.tool_max_ammo == -1:
+			if bullet_cooldown <= 0:
+				if self.get_node("../../../").name == "Right Arm":
+					if Input.is_mouse_button_pressed(BUTTON_LEFT):
+						create_bullet()
 
-				player.apply_impulse(Vector2(0, 0), Vector2(-movement_position.x * tool_.push_force, -movement_position.y * tool_.push_force))
-				rotation_impulse(player, self.get_node("/root/World/Player/Head Position"), self.get_node("/root/World/Player/Feet Position"), movement_position.x * tool_.push_force)
+						player.apply_impulse(Vector2(0, 0), Vector2(-movement_position.x * tool_.push_force, -movement_position.y * tool_.push_force))
+						rotation_impulse(player, self.get_node("/root/World/Player/Head Position"), self.get_node("/root/World/Player/Feet Position"), movement_position.x * tool_.push_force)
 
-				rotation_spring(player_head, movement_position.x * 0.005)
-				rotation_spring(player_pack, movement_position.x * 0.002)
+						rotation_spring(player_head, movement_position.x * tool_.head_kickback_force)
+						rotation_spring(player_pack, movement_position.x * tool_.pack_kickback_force)
 
-				bullet_cooldown = tool_.shoot_cooldown
-				bullet_count += 1
+						bullet_cooldown = tool_.shoot_cooldown
+						bullet_count += 1
+						tool_.tool_current_ammo -= 1
 
-	else:
-		bullet_cooldown -= 1
+			else:
+				bullet_cooldown -= 0.1
 
 	for i in rotate_back:
 		if i.rotation > 0:

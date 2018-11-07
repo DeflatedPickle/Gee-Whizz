@@ -1,10 +1,13 @@
 extends Node
 
-export(int) var shoot_cooldown = 30
+export(float) var shoot_cooldown = 3
 
-export(int) var push_force = 0.8
-export(int) var rotation_force = 0.6
-export(int) var drop_force = 0.4
+export(float) var push_force = 0.8
+export(float) var rotation_force = 0.6
+export(float) var drop_force = 0.4
+
+export(float) var head_kickback_force = 0.005
+export(float) var pack_kickback_force = 0.002
 
 # -1 = Infinite
 export(int) var tool_current_ammo = 10

@@ -20,8 +20,5 @@ bullet_damage = 0
 [node name="FireExtinguishers" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 880, 320 )
-shoot_cooldown = 30
-bullet_speed = 480
-bullet_damage = 0
 
 

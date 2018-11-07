@@ -19,7 +19,7 @@ func _process(delta):
 		var points = [Vector2(pos.x + extents.x, pos.y + extents.y), Vector2(pos.x - extents.x, pos.y - extents.y)]
 
 		if hand_pos.x < points[0].x and hand_pos.x > points[1].x and hand_pos.y < points[0].y and hand_pos.y > points[1].y:
-			if Input.is_mouse_button_pressed(BUTTON_RIGHT):
+			if Input.is_key_pressed(KEY_E):
 				util.reparent_node(the_tool, player_hand)
 
 				the_tool.mode = 3
