@@ -11,11 +11,12 @@ onready var direction_wrapper = direction
 
 var collided = false
 
-var step = 2
-var fast_step = 4
+var slow_step = 0.6
+var fast_step = 1.2
+var current_step = slow_step
 
 var move_timer = 0
-var move_timer_max = 5
+var move_timer_max = 6
 
 var cooldown = 0
 var cooldown_max = 30
@@ -29,25 +30,41 @@ func _process(delta):
 	if cooldown == 0:
 		if direction_wrapper == 1:
 			if move_timer > 0:
-				set_position(get_position() + Vector2(0, step))
+				set_position(get_position() + Vector2(0, current_step))
 
 				move_timer -= 1
 
 			else:
 				direction_wrapper = -1
-				move_timer = move_timer_max
+				# move_timer = move_timer_max
 				cooldown = cooldown_max
+
+				if direction == 1:
+					move_timer = move_timer_max
+					current_step = slow_step
+
+				elif direction == -1:
+					move_timer = move_timer_max / 2
+					current_step = fast_step
 
 		elif direction_wrapper == -1:
 			if move_timer > 0:
-				set_position(get_position() + Vector2(0, -step))
+				set_position(get_position() + Vector2(0, -current_step))
 
 				move_timer -= 1
 
 			else:
 				direction_wrapper = 1
-				move_timer = move_timer_max
+				# move_timer = move_timer_max
 				cooldown = cooldown_max
+
+				if direction == 1:
+					move_timer = move_timer_max / 2
+					current_step = fast_step
+
+				elif direction == -1:
+					move_timer = move_timer_max
+					current_step = slow_step
 
 	else:
 		cooldown -= 1
@@ -65,7 +82,12 @@ func _process(delta):
 
 func _on_Bottom_area_entered(area):
 	collided = true
-	cooldown = cooldown_max
+
+	if direction == 1 and direction_wrapper == -1:
+		move_timer = move_timer_max
+
+	elif direction == -1 and direction_wrapper == 1:
+		move_timer = move_timer_max / 2
 	#move_timer = move_timer_max
 
 
@@ -75,7 +97,12 @@ func _on_Bottom_area_exited(area):
 
 func _on_Top_area_entered(area):
 	collided = true
-	cooldown = cooldown_max
+
+	if direction == 1 and direction_wrapper == -1:
+		move_timer = move_timer_max / 2
+
+	elif direction == -1 and direction_wrapper == 1:
+		move_timer = move_timer_max
 	#move_timer = move_timer_max
 
 
