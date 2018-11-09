@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/lift_door.gd" type="Script" id=1]
+[ext_resource path="res://sprites/debris/blast door/blast_door_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/debris/blast door/blast_door_1.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12, 24 )
+
+[node name="BlastDoor" type="Node" index="0"]
+
+[node name="Top" type="Area2D" parent="." index="0"]
+
+position = Vector2( 0, -24 )
+rotation = 0.0217042
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+direction = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Top" index="1"]
+
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Bottom" type="Area2D" parent="." index="1"]
+
+position = Vector2( 0, 24 )
+rotation = -0.116819
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+direction = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Bottom" index="1"]
+
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="Top" to="Bottom" method="_on_Top_area_entered"]
+
+[connection signal="area_exited" from="Top" to="Bottom" method="_on_Top_area_exited"]
+
+[connection signal="area_entered" from="Bottom" to="Top" method="_on_Bottom_area_entered"]
+
+[connection signal="area_exited" from="Bottom" to="Top" method="_on_Bottom_area_exited"]
+
+
