@@ -10,7 +10,7 @@ func _ready():
 	set_process_input(true)
 
 func _process(delta):
-	if not self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool"):
+	if not self.get_node("/root/World/Player/Body/Right Arm/Position2D").has_node("Tool"):
 		var pos = self.get_global_position()
 		var hand_pos = player_hand.get_global_position()
 

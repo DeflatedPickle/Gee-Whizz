@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.9473, 23.5729 )
 
-[node name="Glock" type="RigidBody2D" index="0"]
+[node name="Glock" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 2

@@ -21,9 +21,9 @@ func _ready():
 	set_process_input(true)
 
 func _process(delta):
-	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+	if self.get_node("/root/World/Player/Body/Right Arm/Position2D").has_node("Tool"):
+		var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
 
-	if tool_:
 		if tool_.tool_current_ammo > 0 or tool_.tool_max_ammo == -1:
 			if bullet_cooldown <= 0:
 				if self.get_node("../../../").name == "Right Arm":
