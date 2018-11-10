@@ -74,9 +74,11 @@ func create_bullet():
 	var gun_position_rotated = gun_point_position.rotated(gun_point.get_rotation())
 	bullet_instance.set_position(gun_point_position)
 
-	bullet_instance.set_rotation(right_arm.get_global_rotation())
+	bullet_instance.set_rotation(tool_.get_global_rotation())
 
 	movement_position = gun_point_position - right_arm.get_global_position()
-	bullet_instance.apply_impulse(Vector2(0, 0), Vector2(tool_.bullet_speed * sign(movement_position.x), tool_.bullet_speed * sign(movement_position.y)))
+
+	var mouse_position = get_global_mouse_position() - self.get_global_position()
+	bullet_instance.apply_impulse(Vector2(), mouse_position * tool_.bullet_speed)
 
 	self.get_node("/root/World").add_child(bullet_instance)

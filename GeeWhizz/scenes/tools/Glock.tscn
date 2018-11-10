@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 35.9473, 23.5729 )
 
-[node name="Glock" type="RigidBody2D"]
+[node name="Glock" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 2
@@ -40,7 +40,7 @@ head_kickback_force = 0.005
 pack_kickback_force = 0.002
 tool_current_ammo = 10
 tool_max_ammo = 10
-bullet_speed = 480
+bullet_speed = 2.0
 bullet_damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]

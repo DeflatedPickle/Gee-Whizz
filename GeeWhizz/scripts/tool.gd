@@ -13,6 +13,6 @@ export(float) var pack_kickback_force = 0.002
 export(int) var tool_current_ammo = 10
 export(int) var tool_max_ammo = 10
 
-export(int) var bullet_speed = 480
+export(float) var bullet_speed = 0.48
 
 export(int) var bullet_damage = 0

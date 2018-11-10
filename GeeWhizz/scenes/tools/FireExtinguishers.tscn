@@ -40,7 +40,7 @@ head_kickback_force = 0.0
 pack_kickback_force = 0.0
 tool_current_ammo = -1
 tool_max_ammo = -1
-bullet_speed = 120
+bullet_speed = 0.12
 bullet_damage = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]

@@ -19,7 +19,7 @@ script = ExtResource( 2 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 1.6, 1.6 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -42,11 +42,11 @@ editor_draw_drag_margin = false
 [node name="Glock" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 420, 250 )
-bullet_damage = 2
 
 [node name="FireExtinguishers" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 880, 320 )
+bullet_speed = 0.48
 
 [node name="HUD" type="CanvasLayer" parent="." index="3"]
 
