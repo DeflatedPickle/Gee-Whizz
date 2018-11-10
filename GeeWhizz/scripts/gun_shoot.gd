@@ -61,10 +61,12 @@ func rotation_spring(node, force):
 	rotate_back.append(node)
 
 func create_bullet():
+	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+
 	var bullet_instance = bullet_scene.instance()
 	bullet_instance.set_name("Bullet{count}".format({"count": bullet_count}))
 
-	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+	bullet_instance.parent_path = @"/root/World/Player/Body/Right Arm/Position2D/Tool"
 
 	var right_arm = self.get_node("/root/World/Player/Body/Right Arm")
 	var gun_point = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool/Sprite/Position2D")
