@@ -16,10 +16,10 @@ var fast_step = 1.2
 var current_step = slow_step
 
 var move_timer = 0
-var move_timer_max = 6
+var move_timer_max = 12
 
 var cooldown = 0
-var cooldown_max = 30
+var cooldown_max = 80
 
 onready var util = preload("res://scripts/util.gd").new()
 

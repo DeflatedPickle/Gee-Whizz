@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/drop_tool.gd" type="Script" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://scenes/tools/FireExtinguishers.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/hud.gd" type="Script" id=5]
 [ext_resource path="res://scenes/objects/BlastDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/background.png" type="Texture" id=7]
+[ext_resource path="res://scenes/objects/ship parts/ShipSquareMedium.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/objects/ship parts/ShipRectangleMedium.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/objects/ship parts/ShipSquareSmall.tscn" type="PackedScene" id=10]
 
 [node name="World" type="Node" index="0"]
 
@@ -24,24 +28,36 @@ limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
 limit_bottom = 10000000
-limit_smoothed = false
+limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
+smoothing_enabled = true
+smoothing_speed = 10.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.09
+drag_margin_top = 0.19
+drag_margin_right = 0.09
+drag_margin_bottom = 0.15
 editor_draw_screen = true
 editor_draw_limits = false
-editor_draw_drag_margin = false
+editor_draw_drag_margin = true
+_sections_unfolded = [ "Drag Margin", "Editor", "Smoothing" ]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player/Camera2D" index="0"]
+
+remote_path = NodePath("../../../Node2D")
+use_global_coordinates = true
+update_position = true
+update_rotation = false
+update_scale = false
+_sections_unfolded = [ "Update" ]
 
 [node name="Glock" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 420, 250 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+tool_current_ammo = 1
 
 [node name="FireExtinguishers" parent="." index="2" instance=ExtResource( 4 )]
 
@@ -82,5 +98,121 @@ _sections_unfolded = [ "Anchor", "Grow Direction" ]
 [node name="BlastDoor" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( -250, 180 )
+collision_mask = 1024
+mode = 3
+
+[node name="Node2D" type="Node2D" parent="." index="5"]
+
+position = Vector2( 480, 300 )
+z_index = -20
+_sections_unfolded = [ "Z Index" ]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" index="0"]
+
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -160.0
+margin_top = -120.0
+margin_right = 160.0
+margin_bottom = 120.0
+rect_scale = Vector2( 6, 6 )
+rect_pivot_offset = Vector2( 160, 120 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 2
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="Ship Parts" type="Node" parent="." index="6"]
+
+[node name="ShipSquare" parent="Ship Parts" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 245.918, 25.7357 )
+rotation = -0.231767
+mode = 0
+applied_torque = 20.0
+_sections_unfolded = [ "Applied Forces", "Collision" ]
+
+[node name="ShipSquare10" parent="Ship Parts" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( -377.133, 27.0961 )
+rotation = 0.116228
+mode = 0
+
+[node name="ShipSquare4" parent="Ship Parts" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 138.241, 480.395 )
+rotation = 0.371668
+mode = 0
+
+[node name="ShipRectangle" parent="Ship Parts" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( -236.516, 321.403 )
+rotation = -0.0752222
+
+[node name="ShipRectangle2" parent="Ship Parts" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( -236.029, 40.72 )
+rotation = 0.0949099
+
+[node name="ShipSquare2" parent="Ship Parts" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 337.873, 32.706 )
+rotation = 0.440557
+mode = 0
+
+[node name="ShipSquare5" parent="Ship Parts" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 256.703, 488.133 )
+rotation = 0.130968
+mode = 0
+
+[node name="ShipSquare6" parent="Ship Parts" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 14.5562, 499.016 )
+rotation = 0.692676
+mode = 0
+
+[node name="ShipSquare3" parent="Ship Parts" index="8" instance=ExtResource( 8 )]
+
+position = Vector2( -375.487, 332.708 )
+rotation = -0.0803901
+
+[node name="ShipRectangle3" parent="Ship Parts" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( -361.464, 473.376 )
+rotation = -1.66553
+
+[node name="ShipRectangle5" parent="Ship Parts" index="10" instance=ExtResource( 9 )]
+
+position = Vector2( -360.104, -112.946 )
+rotation = -1.4516
+
+[node name="ShipRectangle4" parent="Ship Parts" index="11" instance=ExtResource( 9 )]
+
+position = Vector2( 648.899, 521.023 )
+rotation = -0.31993
+mode = 0
+
+[node name="ShipSquare7" parent="Ship Parts" index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 776.774, 429.878 )
+rotation = 0.312011
+
+[node name="ShipSquare8" parent="Ship Parts" index="13" instance=ExtResource( 10 )]
+
+position = Vector2( 803.982, 510.141 )
+rotation = -0.428981
+
+[node name="ShipSquare9" parent="Ship Parts" index="14" instance=ExtResource( 10 )]
+
+position = Vector2( 529.186, 636.655 )
+rotation = -0.727476
 
 
