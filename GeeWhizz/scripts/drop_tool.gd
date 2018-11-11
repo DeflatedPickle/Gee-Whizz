@@ -27,6 +27,7 @@ func _process(delta):
 			var movement_position = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool").get_global_position() - right_arm.get_global_position()
 
 			gun.mode = 0
+			gun.get_node("CollisionShape2D").disabled = false
 			gun.set_applied_torque(movement_position.x * 0.05)
 			gun.apply_impulse(Vector2(0, 0), Vector2(movement_position.x * 0.5, movement_position.y * 0.5))
 

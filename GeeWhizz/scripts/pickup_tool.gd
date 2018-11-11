@@ -23,6 +23,7 @@ func _process(delta):
 				util.reparent_node(the_tool, player_hand)
 
 				the_tool.mode = 3
+				the_tool.get_node("CollisionShape2D").disabled = true
 				the_tool.set_position(Vector2(0, 0))
 				the_tool.set_rotation(0)
 

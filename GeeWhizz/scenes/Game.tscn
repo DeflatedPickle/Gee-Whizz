@@ -131,88 +131,120 @@ _sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
 
 [node name="Ship Parts" type="Node" parent="." index="6"]
 
-[node name="ShipSquare" parent="Ship Parts" index="0" instance=ExtResource( 8 )]
-
-position = Vector2( 245.918, 25.7357 )
-rotation = -0.231767
-mode = 0
-applied_torque = 20.0
-_sections_unfolded = [ "Applied Forces", "Collision" ]
-
-[node name="ShipSquare10" parent="Ship Parts" index="1" instance=ExtResource( 8 )]
+[node name="ShipSquare10" parent="Ship Parts" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( -377.133, 27.0961 )
-rotation = 0.116228
-mode = 0
+rotation = 0.0854661
+speed = 0.5
 
-[node name="ShipSquare4" parent="Ship Parts" index="2" instance=ExtResource( 8 )]
-
-position = Vector2( 138.241, 480.395 )
-rotation = 0.371668
-mode = 0
-
-[node name="ShipRectangle" parent="Ship Parts" index="3" instance=ExtResource( 9 )]
+[node name="ShipRectangle" parent="Ship Parts" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( -236.516, 321.403 )
-rotation = -0.0752222
+rotation = -0.0349188
+speed = 0.5
 
-[node name="ShipRectangle2" parent="Ship Parts" index="4" instance=ExtResource( 9 )]
+[node name="ShipRectangle2" parent="Ship Parts" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( -236.029, 40.72 )
-rotation = 0.0949099
+rotation = 0.0534838
+_sections_unfolded = [ "Collision", "Transform" ]
+speed = 0.5
 
-[node name="ShipSquare2" parent="Ship Parts" index="5" instance=ExtResource( 10 )]
+[node name="ShipSquare3" parent="Ship Parts" index="3" instance=ExtResource( 8 )]
 
-position = Vector2( 337.873, 32.706 )
-rotation = 0.440557
-mode = 0
+position = Vector2( -375.487, 331.121 )
+rotation = -0.0493818
+speed = 0.5
 
-[node name="ShipSquare5" parent="Ship Parts" index="6" instance=ExtResource( 10 )]
+[node name="ShipRectangle3" parent="Ship Parts" index="4" instance=ExtResource( 9 )]
 
-position = Vector2( 256.703, 488.133 )
-rotation = 0.130968
-mode = 0
+position = Vector2( -364.638, 471.789 )
+rotation = -1.65503
+speed = 0.5
 
-[node name="ShipSquare6" parent="Ship Parts" index="7" instance=ExtResource( 10 )]
-
-position = Vector2( 14.5562, 499.016 )
-rotation = 0.692676
-mode = 0
-
-[node name="ShipSquare3" parent="Ship Parts" index="8" instance=ExtResource( 8 )]
-
-position = Vector2( -375.487, 332.708 )
-rotation = -0.0803901
-
-[node name="ShipRectangle3" parent="Ship Parts" index="9" instance=ExtResource( 9 )]
-
-position = Vector2( -361.464, 473.376 )
-rotation = -1.66553
-
-[node name="ShipRectangle5" parent="Ship Parts" index="10" instance=ExtResource( 9 )]
+[node name="ShipRectangle5" parent="Ship Parts" index="5" instance=ExtResource( 9 )]
 
 position = Vector2( -360.104, -112.946 )
-rotation = -1.4516
+rotation = 1.67927
+speed = 0.5
 
-[node name="ShipRectangle4" parent="Ship Parts" index="11" instance=ExtResource( 9 )]
+[node name="Debris" type="Node" parent="Ship Parts" index="6"]
 
-position = Vector2( 648.899, 521.023 )
-rotation = -0.31993
+[node name="ShipSquare2" parent="Ship Parts/Debris" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 337.873, 32.706 )
 mode = 0
+_sections_unfolded = [ "Collision", "Transform" ]
+direction = Vector2( 60, -180 )
+speed = 2.0
+sprite_rotation = 50
 
-[node name="ShipSquare7" parent="Ship Parts" index="12" instance=ExtResource( 10 )]
+[node name="ShipSquare5" parent="Ship Parts/Debris" index="1" instance=ExtResource( 10 )]
 
-position = Vector2( 776.774, 429.878 )
-rotation = 0.312011
+position = Vector2( 256.703, 488.133 )
+mode = 0
+direction = Vector2( 60, 250 )
+speed = 2.0
+sprite_rotation = 5
 
-[node name="ShipSquare8" parent="Ship Parts" index="13" instance=ExtResource( 10 )]
+[node name="ShipSquare7" parent="Ship Parts/Debris" index="2" instance=ExtResource( 10 )]
 
-position = Vector2( 803.982, 510.141 )
-rotation = -0.428981
+position = Vector2( 769.032, 423.849 )
+mode = 0
+direction = Vector2( 120, 130 )
+speed = 2.0
+sprite_rotation = 30
 
-[node name="ShipSquare9" parent="Ship Parts" index="14" instance=ExtResource( 10 )]
+[node name="ShipSquare8" parent="Ship Parts/Debris" index="3" instance=ExtResource( 10 )]
 
-position = Vector2( 529.186, 636.655 )
-rotation = -0.727476
+position = Vector2( 800.201, 534.886 )
+mode = 0
+direction = Vector2( 80, 150 )
+speed = 2.0
+sprite_rotation = 40
+
+[node name="ShipSquare9" parent="Ship Parts/Debris" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 509.945, 622.547 )
+mode = 0
+direction = Vector2( 160, 100 )
+speed = 2.0
+sprite_rotation = 90
+
+[node name="ShipSquare6" parent="Ship Parts/Debris" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 14.5562, 499.016 )
+mode = 0
+_sections_unfolded = [ "Collision", "Transform" ]
+direction = Vector2( 100, 70 )
+speed = 2.0
+sprite_rotation = -70.0
+
+[node name="ShipRectangle4" parent="Ship Parts/Debris" index="6" instance=ExtResource( 9 )]
+
+position = Vector2( 647.312, 521.023 )
+mode = 0
+_sections_unfolded = [ "Collision", "Transform" ]
+direction = Vector2( 80, 70 )
+speed = 3.0
+sprite_rotation = 50.0
+
+[node name="ShipSquare" parent="Ship Parts/Debris" index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 245.918, 25.7357 )
+mode = 0
+_sections_unfolded = [ "Applied Forces", "Collision", "Transform" ]
+direction = Vector2( 50, -80 )
+speed = 2.0
+sprite_rotation = 70.0
+
+[node name="ShipSquare4" parent="Ship Parts/Debris" index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 138.241, 480.395 )
+mode = 0
+_sections_unfolded = [ "Collision", "Transform" ]
+direction = Vector2( 70, 150 )
+speed = 2.0
+sprite_rotation = -40.0
 
 
