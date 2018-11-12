@@ -45,9 +45,9 @@ bullet_damage = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0.29789, -1.33265 )
 shape = SubResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

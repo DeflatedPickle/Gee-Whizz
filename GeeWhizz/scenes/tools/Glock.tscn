@@ -45,21 +45,21 @@ bullet_damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -12.1102, -11.1912 )
 shape = SubResource( 1 )
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 3 )
-offset = Vector2( -4, 0 )
+offset = Vector2( -1, 2 )
 script = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="Position2D" type="Position2D" parent="Sprite" index="0"]
 
-position = Vector2( -10.9376, 0.273041 )
+position = Vector2( -7.97957, 3.0462 )
 rotation = -0.497956
 scale = Vector2( 0.285714, 0.285714 )
 _sections_unfolded = [ "Transform" ]
