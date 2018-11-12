@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/drop_tool.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/objects/ship parts/ShipSquareMedium.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/objects/ship parts/ShipRectangleMedium.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/ship parts/ShipSquareSmall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/tools/Spanner.tscn" type="PackedScene" id=11]
 
 [node name="World" type="Node" index="0"]
 
@@ -55,7 +56,7 @@ _sections_unfolded = [ "Update" ]
 
 [node name="Glock" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 420, 250 )
+position = Vector2( 404.692, 252.312 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 tool_current_ammo = 1
 
@@ -247,5 +248,9 @@ _sections_unfolded = [ "Collision", "Transform" ]
 direction = Vector2( 70, 150 )
 speed = 2.0
 sprite_rotation = -40.0
+
+[node name="Glock2" parent="." index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 673.273, 387.099 )
 
 
