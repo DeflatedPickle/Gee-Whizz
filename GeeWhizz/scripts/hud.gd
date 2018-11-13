@@ -3,6 +3,7 @@ extends Node
 onready var player = self.get_node("/root/World/Player")
 
 onready var ammo = self.get_node("/root/World/HUD/LabelAmmo")
+onready var time = self.get_node("/root/World/HUD/LabelTime")
 
 var tool_ = null
 
@@ -18,3 +19,5 @@ func _process(delta):
 
 	else:
 		ammo.text = ""
+
+	time.text = str(self.get_node("/root/World/Player/Body").time_limit)
