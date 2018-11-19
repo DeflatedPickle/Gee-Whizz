@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/drop_tool.gd" type="Script" id=2]
+[ext_resource path="res://scripts/hud.gd" type="Script" id=3]
+[ext_resource path="res://sprites/background.png" type="Texture" id=4]
+[ext_resource path="res://scenes/tools/Spanner.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node"]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 480, 300 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="4"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1.6, 1.6 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.09
+drag_margin_top = 0.19
+drag_margin_right = 0.09
+drag_margin_bottom = 0.15
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = true
+_sections_unfolded = [ "Drag Margin", "Editor", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player/Camera2D" index="0"]
+
+remote_path = NodePath("../../../Node2D")
+use_global_coordinates = true
+update_position = true
+update_rotation = false
+update_scale = false
+_sections_unfolded = [ "Update" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="." index="1"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 3 )
+
+[node name="LabelAmmo" type="Label" parent="HUD" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 990.0
+margin_top = 570.0
+margin_right = 1016.0
+margin_bottom = 595.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction" ]
+
+[node name="LabelTime" type="Label" parent="HUD" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 990.0
+margin_top = 10.0
+margin_right = 1016.0
+margin_bottom = 35.0
+grow_horizontal = 0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction" ]
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+
+position = Vector2( 480, 300 )
+z_index = -20
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Node2D" index="0"]
+
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -160.0
+margin_top = -120.0
+margin_right = 160.0
+margin_bottom = 120.0
+rect_scale = Vector2( 6, 6 )
+rect_pivot_offset = Vector2( 160, 120 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 2
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Spanner" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 673.273, 387.099 )
+
+

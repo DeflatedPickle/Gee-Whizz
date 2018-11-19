@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/push_in_direction.gd" type="Script" id=1]
-[ext_resource path="res://sprites/debris/ship parts/white_rectangle.png" type="Texture" id=2]
+[ext_resource path="res://scripts/push_off.gd" type="Script" id=2]
+[ext_resource path="res://sprites/debris/ship parts/white_rectangle.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -37,12 +38,13 @@ sprite_rotation = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
 scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 
