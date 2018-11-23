@@ -3,7 +3,7 @@ extends Node
 
 export(Vector2) var direction = Vector2(0, 0) setget set_direction
 export(float) var speed = 0.5 setget set_speed
-export(int) var sprite_rotation = 0 setget set_sprite_rotation
+export(float) var sprite_rotation = 0.1 setget set_sprite_rotation
 
 func _ready():
 	self.apply_impulse(Vector2(0, 0), Vector2(direction.x * speed, direction.y * speed))

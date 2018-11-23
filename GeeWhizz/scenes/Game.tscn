@@ -12,7 +12,7 @@
 [ext_resource path="res://scenes/objects/ship parts/ShipSquareSmall.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/tools/Spanner.tscn" type="PackedScene" id=11]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -171,38 +171,32 @@ __meta__ = {
 
 position = Vector2( -377.133, 27.0961 )
 rotation = 0.0854661
-speed = 0.5
 
 [node name="ShipRectangle" parent="Ship Parts" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( -236.516, 321.403 )
 rotation = -0.0349188
-speed = 0.5
 
 [node name="ShipRectangle2" parent="Ship Parts" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( -236.029, 40.72 )
 rotation = 0.0534838
 _sections_unfolded = [ "Collision", "Transform" ]
-speed = 0.5
 
 [node name="ShipSquare3" parent="Ship Parts" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( -375.487, 331.121 )
 rotation = -0.0493818
-speed = 0.5
 
 [node name="ShipRectangle3" parent="Ship Parts" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( -364.638, 471.789 )
 rotation = -1.65503
-speed = 0.5
 
 [node name="ShipRectangle5" parent="Ship Parts" index="5" instance=ExtResource( 9 )]
 
 position = Vector2( -360.104, -112.946 )
 rotation = 1.67927
-speed = 0.5
 
 [node name="Debris" type="Node" parent="Ship Parts" index="6"]
 

@@ -32,7 +32,7 @@ angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 direction = Vector2( 0, 0 )
-speed = null
+speed = 0.5
 sprite_rotation = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
