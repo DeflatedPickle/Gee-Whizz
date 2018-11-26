@@ -40,4 +40,8 @@ texture = ExtResource( 3 )
 offset = Vector2( -9, 0 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
+[connection signal="area_entered" from="." to="." method="_on_Switch_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_Switch_area_exited"]
+
 

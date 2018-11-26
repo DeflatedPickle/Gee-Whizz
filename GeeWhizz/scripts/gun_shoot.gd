@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta):
 	if self.get_node("/root/World/Player/Body/Right Arm/Position2D").has_node("Tool"):
-		var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+		var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool/Stats")
 
 		if tool_.tool_current_ammo > 0 or tool_.tool_max_ammo == -1:
 			if bullet_cooldown <= 0:
@@ -47,6 +47,7 @@ func _process(delta):
 
 func create_bullet():
 	var tool_ = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool")
+	var stats = self.get_node("/root/World/Player/Body/Right Arm/Position2D/Tool/Stats")
 
 	var bullet_instance = bullet_scene.instance()
 	bullet_instance.set_name("Bullet{count}".format({"count": bullet_count}))
@@ -64,6 +65,6 @@ func create_bullet():
 	movement_position = gun_point_position - right_arm.get_global_position()
 
 	var mouse_position = get_global_mouse_position() - self.get_global_position()
-	bullet_instance.apply_impulse(Vector2(), mouse_position * tool_.bullet_speed)
+	bullet_instance.apply_impulse(Vector2(), mouse_position * stats.bullet_speed)
 
 	self.get_node("/root/World").add_child(bullet_instance)
