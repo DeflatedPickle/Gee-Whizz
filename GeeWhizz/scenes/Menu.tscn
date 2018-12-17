@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="Root" type="Node"]
+[node name="Root" type="Node" index="0"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 

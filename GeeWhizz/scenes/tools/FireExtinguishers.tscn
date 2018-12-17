@@ -1,16 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/tool.gd" type="Script" id=1]
-[ext_resource path="res://scripts/pickup_tool.gd" type="Script" id=2]
-[ext_resource path="res://sprites/tools/fire_extinguisher.png" type="Texture" id=3]
-[ext_resource path="res://scripts/gun_shoot.gd" type="Script" id=4]
+[ext_resource path="res://scripts/push_in_direction.gd" type="Script" id=1]
+[ext_resource path="res://scripts/tool.gd" type="Script" id=2]
+[ext_resource path="res://scripts/pickup_tool.gd" type="Script" id=3]
+[ext_resource path="res://sprites/tools/fire_extinguisher.png" type="Texture" id=4]
+[ext_resource path="res://scripts/gun_shoot.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 28.9878, 32.2094 )
 
-[node name="Glock" type="RigidBody2D"]
+[node name="FireExtinguisher" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 2
@@ -32,6 +33,14 @@ angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+direction = Vector2( 0, 0 )
+speed = 0.5
+rotation_speed = 1
+sprite_rotation = 0.1
+
+[node name="Stats" type="Node" parent="." index="0"]
+
+script = ExtResource( 2 )
 shoot_cooldown = 0.1
 push_force = 0.1
 rotation_force = 0.6
@@ -43,17 +52,17 @@ tool_max_ammo = -1
 bullet_speed = 0.12
 bullet_damage = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="2"]
 
 scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 3 )
-script = ExtResource( 4 )
+texture = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="Position2D" type="Position2D" parent="Sprite" index="0"]

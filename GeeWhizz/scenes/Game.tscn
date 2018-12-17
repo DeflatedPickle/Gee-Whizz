@@ -63,8 +63,8 @@ __meta__ = {
 [node name="Glock" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 404.692, 252.312 )
+applied_torque = 200.0
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
-tool_current_ammo = 1
 
 [node name="FireExtinguishers" parent="." index="2" instance=ExtResource( 4 )]
 
@@ -204,50 +204,62 @@ rotation = 1.67927
 
 position = Vector2( 337.873, 32.706 )
 mode = 0
+applied_torque = 200.0
 _sections_unfolded = [ "Collision", "Transform" ]
 direction = Vector2( 60, -180 )
 speed = 2.0
+rotation_speed = 1
 sprite_rotation = 50
 
 [node name="ShipSquare5" parent="Ship Parts/Debris" index="1" instance=ExtResource( 10 )]
 
 position = Vector2( 256.703, 488.133 )
 mode = 0
+applied_torque = 200.0
 direction = Vector2( 60, 250 )
 speed = 2.0
+rotation_speed = 1
 sprite_rotation = 5
 
 [node name="ShipSquare7" parent="Ship Parts/Debris" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 769.032, 423.849 )
 mode = 0
+applied_torque = 200.0
 direction = Vector2( 120, 130 )
 speed = 2.0
+rotation_speed = 1
 sprite_rotation = 30
 
 [node name="ShipSquare8" parent="Ship Parts/Debris" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( 800.201, 534.886 )
 mode = 0
+applied_torque = 200.0
 direction = Vector2( 80, 150 )
 speed = 2.0
+rotation_speed = 1
 sprite_rotation = 40
 
 [node name="ShipSquare9" parent="Ship Parts/Debris" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 509.945, 622.547 )
 mode = 0
+applied_torque = 200.0
 direction = Vector2( 160, 100 )
 speed = 2.0
+rotation_speed = 1
 sprite_rotation = 90
 
 [node name="ShipSquare6" parent="Ship Parts/Debris" index="5" instance=ExtResource( 10 )]
 
 position = Vector2( 14.5562, 499.016 )
 mode = 0
+applied_torque = 200.0
 _sections_unfolded = [ "Collision", "Transform" ]
 direction = Vector2( 100, 70 )
 speed = 2.0
+rotation_speed = 1
 sprite_rotation = -70.0
 
 [node name="ShipRectangle4" parent="Ship Parts/Debris" index="6" instance=ExtResource( 9 )]

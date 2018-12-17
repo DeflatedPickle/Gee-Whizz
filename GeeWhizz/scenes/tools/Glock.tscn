@@ -31,6 +31,7 @@ linear_velocity = Vector2( 0, 0 )
 linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
+applied_torque = 200.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 direction = Vector2( 0, 0 )
